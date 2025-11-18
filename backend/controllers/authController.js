@@ -32,3 +32,23 @@ exports.sendOtp = async (req, res) => {
     return res.status(500).json({ message: "Server error" });
   }
 };
+exports.verifyOtp = async (req, res) => {
+  const { email, otp } = req.body;
+
+  // Find the user by email
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    return res.status(400).json({ message: "User not found" });
+  }
+
+  // Check if OTP matches and not expired
+  if (user.otp !== otp || user.otpExpires < Date.now()) {
+    return res.status(400).json({ message: "Invalid or expired OTP" });
+  }
+
+  return res.json({
+    message: "Login successful",
+    admin: true
+  });
+};
