@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+// tailwind.config.js - CORRECTED
 module.exports = {
-  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
+  content: ["./pages/**/*.{js,jsx,tsx}", "./components/**/*.{js,jsx,tsx}"],
+  // ... rest of the config
+
   theme: {
     extend: {
       colors: {
