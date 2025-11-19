@@ -1,111 +1,70 @@
+import React from "react";
+
 export default function Home() {
   return (
-    <div style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh", fontFamily: "Poppins, sans-serif" }}>
-      
+    <div className="min-h-screen bg-black text-white">
       {/* HERO SECTION */}
-      <div
+      <section
+        className="h-screen bg-cover bg-center flex items-center justify-center"
         style={{
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://i.ibb.co/3RKr0b4/music-bg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          padding: "120px 20px",
-          textAlign: "center",
+          backgroundImage:
+            "url('https://i.ibb.co/d0Fv6ZS9/IMG-20250425-WA0004.jpg')",
         }}
       >
-        <h1 style={{ fontSize: "60px", fontWeight: "900", color: "red", textShadow: "0 0 20px red" }}>
-          KING VIBEZ
-        </h1>
-        <p style={{ fontSize: "18px", color: "#ccc", marginTop: "10px" }}>
-          Official Website • Music • Videos • Merch
-        </p>
+        <div className="text-center px-6">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-red-600 drop-shadow-lg">
+            KING VIBEZ
+          </h1>
+          <p className="mt-4 text-lg md:text-2xl font-light opacity-90">
+            Afro & Trap Music • The New Wave
+          </p>
 
-        {/* Buttons */}
-        <div style={{ marginTop: "40px", display: "flex", justifyContent: "center", gap: "20px" }}>
-          <button
-            style={{
-              backgroundColor: "red",
-              color: "#000",
-              padding: "12px 30px",
-              border: "none",
-              borderRadius: "5px",
-              fontWeight: "700",
-              cursor: "pointer",
-            }}
-          >
+          <button className="mt-8 px-8 py-3 bg-red-600 hover:bg-red-700 transition-all rounded-xl text-lg font-semibold">
             Listen Now
           </button>
-
-          <button
-            style={{
-              backgroundColor: "#111",
-              border: "2px solid red",
-              color: "red",
-              padding: "12px 30px",
-              borderRadius: "5px",
-              fontWeight: "700",
-              cursor: "pointer",
-            }}
-          >
-            Watch Videos
-          </button>
         </div>
-      </div>
+      </section>
 
-      <main style={{ maxWidth: "1200px", margin: "40px auto", padding: "0 20px" }}>
+      {/* SECTION: BIO */}
+      <section className="px-6 md:px-20 py-16 bg-black">
+        <h2 className="text-3xl md:text-5xl font-bold text-red-500 mb-6">
+          Who is King Vibez?
+        </h2>
+        <p className="text-gray-300 leading-relaxed text-lg md:text-xl max-w-3xl">
+          King Vibez is a rising Nigerian artist known for his unique fusion of
+          Afrobeat, Trap, and street vibes. His sound carries raw emotions,
+          energy, and rhythm that connects deeply with fans worldwide.
+        </p>
+      </section>
 
-        {/* MUSIC SECTION */}
-        <section style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "35px", color: "red", marginBottom: "20px" }}>
-            🔥 Music
-          </h2>
-          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
-            <div style={card}>Song 1</div>
-            <div style={card}>Song 2</div>
-            <div style={card}>Song 3</div>
-          </div>
-        </section>
+      {/* SECTION: MUSIC */}
+      <section className="px-6 md:px-20 py-16 bg-black">
+        <h2 className="text-3xl md:text-5xl font-bold text-red-500 mb-8">
+          Latest Releases
+        </h2>
 
-        {/* VIDEO SECTION */}
-        <section style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "35px", color: "red", marginBottom: "20px" }}>
-            🎬 Videos
-          </h2>
-          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
-            <div style={card}>Video 1</div>
-            <div style={card}>Video 2</div>
-            <div style={card}>Video 3</div>
-          </div>
-        </section>
-
-        {/* MERCH SECTION */}
-        <section style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "35px", color: "red", marginBottom: "20px" }}>
-            🛒 Merch
-          </h2>
-          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
-            <div style={card}>T-Shirt</div>
-            <div style={card}>Hoodie</div>
-            <div style={card}>Cap</div>
-          </div>
-        </section>
-      </main>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[1, 2, 3].map((song) => (
+            <div
+              key={song}
+              className="bg-zinc-900 rounded-xl p-4 shadow-lg border border-red-600"
+            >
+              <div className="h-48 bg-zinc-800 rounded-lg mb-4"></div>
+              <h3 className="text-xl font-semibold mb-2">Song Title {song}</h3>
+              <button className="px-5 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition">
+                Play
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* FOOTER */}
-      <footer style={{ textAlign: "center", padding: "30px 0", backgroundColor: "#111", color: "#aaa" }}>
-        © 2025 King Vibez • Built with ❤️ by The Realest_ice
+      <footer className="py-10 bg-black border-t border-red-700 text-center">
+        <p className="text-gray-400">
+          © {new Date().getFullYear()} King Vibez • All Rights Reserved
+        </p>
       </footer>
     </div>
   );
-}
-
-// Reusable card styling
-const card = {
-  backgroundColor: "#111",
-  border: "1px solid red",
-  padding: "25px",
-  borderRadius: "10px",
-  flex: "1",
-  minWidth: "200px",
-  textAlign: "center",
-  fontWeight: "600",
-};
+            }
