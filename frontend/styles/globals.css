@@ -1,14 +1,179 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* dark base */
-:root {
-  color-scheme: dark;
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
-body {
-  background: linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
-  color: #ffffff;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #111;
+  padding: 20px 30px;
+  border-bottom: 2px solid #e02626;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #e02626;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: #e02626;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+  display: none;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* Mobile Sidebar */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #111;
+  border-bottom: 2px solid #e02626;
+  padding: 20px 30px;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-box {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 40px 60px;
+  border-radius: 15px;
+}
+
+.hero-title {
+  font-size: 70px;
+  font-weight: 900;
+  color: #e02626;
+  margin: 0;
+}
+
+.hero-text {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.hero-btn {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 13px 30px;
+  background: #e02626;
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.hero-btn:hover {
+  background: #ff2d2d;
+}
+
+/* General Page Sections */
+.section {
+  padding: 100px 30px 50px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #e02626;
+  margin-bottom: 20px;
+}
+
+/* Music Cards */
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.music-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #e02626;
+}
+
+.music-card h3 {
+  margin: 15px 0;
+}
+
+.play-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #e02626;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.play-btn:hover {
+  background: #ff2d2d;
+}
+
+/* Videos */
+.video-frame {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  border: 2px solid #e02626;
+}
+
+/* About Page */
+.about-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ccc;
+  max-width: 800px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .hero-title {
+    font-size: 45px;
+  }
+  .hero-box {
+    padding: 25px 35px;
+  }
 }
